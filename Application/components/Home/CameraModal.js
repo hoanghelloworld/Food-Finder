@@ -72,3 +72,4 @@ const CameraModal = ({
 };
 
 export default CameraModal;
+

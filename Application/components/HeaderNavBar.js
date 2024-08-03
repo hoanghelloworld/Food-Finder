@@ -7,6 +7,7 @@ import SearchBar from './Home/SearchBar';
 import CameraModal from './Home/CameraModal';
 import { dataURLtoBlob, uploadImage } from './Home/utils';
 import PredictResult from './Home/PredictResult';
+import { useLabel } from "@/context/LabelContext";
 
 const HeaderNavBar = ({ onSearchResult }) => {
   const { data: session } = useSession();
@@ -18,7 +19,7 @@ const HeaderNavBar = ({ onSearchResult }) => {
 
   const [imageSrc, setImageSrc] = useState(null);
   const [fileLink, setFileLink] = useState(null); // Thêm state để lưu fileLink
-  const [label, setLabel] = useState(null);
+  const {label, setLabel} = useState(null);
   const [confidence, setConfidence] = useState(null);
 
   useEffect(() => {
@@ -211,4 +212,3 @@ const HeaderNavBar = ({ onSearchResult }) => {
 };
 
 export default HeaderNavBar;
-
