@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { MdPhotoCamera, MdClose, MdReplay, MdCloudUpload } from 'react-icons/md';
 
+// Hàm nhận đầu vào để tắt, bật cam, nhập xuất file ảnh
 const CameraModal = ({
-  cameraOpen,
-  handleCloseCamera,
+  cameraOpen, //Bool
+  handleCloseCamera, //Bool
   handleCapture,
   webcamRef,
   fileInputRef,

@@ -1,11 +1,12 @@
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
-import React, { useEffect, useState, useRef, useContext } from "react";
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import { MdPhotoCamera, MdClose, MdReplay, MdCloudUpload } from 'react-icons/md';
 import { UserLocationContext } from '@/context/UserLocationContext';
 import SearchBar from './Home/SearchBar';
 import CameraModal from './Home/CameraModal';
 import { dataURLtoBlob, uploadImage } from './Home/utils';
+import PredictResult from './Home/PredictResult';
 
 const HeaderNavBar = ({ onSearchResult }) => {
   const { data: session } = useSession();
@@ -52,14 +53,13 @@ const HeaderNavBar = ({ onSearchResult }) => {
       const reader = new FileReader();
       reader.onloadend = async () => {
         const imageDataUrl = reader.result;
-        console.log(`KDL base64: ${typeof imageDataUrl}`);
         setImageSrc(imageDataUrl);
         const blob = dataURLtoBlob(imageDataUrl);
-        // Upload the image
         await uploadImage(blob);
       };
       reader.readAsDataURL(file);
     }
+    setCameraOpen(false);
   };
 
   // Base64 thành BLOB
@@ -184,6 +184,7 @@ const HeaderNavBar = ({ onSearchResult }) => {
         imageSrc={imageSrc}
         setImageSrc={setImageSrc}
       />
+      {<PredictResult label={label} confidence={confidence} />}
       <div>
         {session?.user ? (
           <>
