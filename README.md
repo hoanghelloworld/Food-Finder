@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <img src="assets/_12ccfb34-833d-48f7-bd12-a69037d04a1c.jpg" alt="logo" width="200" height="auto" />
+  <img src="assets/logo.png" alt="logo" width="200" height="auto" />
   <h1>Student Management</h1>
   
   <p>
