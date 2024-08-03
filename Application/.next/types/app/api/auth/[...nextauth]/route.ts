@@ -1,4 +1,4 @@
-// File: C:\Users\huyho\OneDrive\Máy tính\restaurant-finder-nextjs\Food-Finder\Front-end\app\api\auth\[...nextauth]\route.js
+// File: C:\Users\FPT\Code Python\FoodFinderWeb\restaurant-finder-nextjs\app\api\auth\[...nextauth]\route.js
 import * as entry from '../../../../../../app/api/auth/[...nextauth]/route.js'
 import type { NextRequest } from 'next/server.js'
 

@@ -1,32 +1,27 @@
-import Data from '@/Shared/Data';
+import { FaStar } from 'react-icons/fa';
 import React, { useState } from 'react';
 
 function SelectRating({ onRatingChange }) {
-  const [selectedRating, setSelectedRating] = useState([]);
-
-  const onSelectRating = (isChecked, value) => {
-    let updatedRatings;
-    if (isChecked) {
-      updatedRatings = [...selectedRating, value];
-    } else {
-      updatedRatings = selectedRating.filter((n) => n !== value);
-    }
-    setSelectedRating(updatedRatings);
-    onRatingChange(updatedRatings);
-  };
+  const [hoveredRating, setHoveredRating] = useState(0);
+  const [selectedRating, setSelectedRating] = useState(0);
 
   return (
-    <div className='px-2 mt-5'>
-      <h2 className='font-bold'>Select Rating</h2>
-      <div>
-        {Data.ratingList.map((item, index) => (
-          <div key={index} className='flex justify-between'>
-            <label>{item.icon}</label>
-            <input
-              type='checkbox'
-              onChange={(e) => onSelectRating(e.target.checked, item.name)}
-            />
-          </div>
+    <div className='px-2'>
+      <h2 className='font-bold text-sm'>Select Rating</h2>
+      <div className='flex flex-col items-start'>
+        {[1, 2, 3, 4, 5].map((star) => (
+          <FaStar
+            key={star}
+            size={20}
+            className='cursor-pointer'
+            color={star <= (hoveredRating || selectedRating) ? 'orange' : 'grey'}
+            onMouseEnter={() => setHoveredRating(star)}
+            onMouseLeave={() => setHoveredRating(0)}
+            onClick={() => {
+            setSelectedRating(star);
+            onRatingChange(star);
+            }}
+          />
         ))}
       </div>
     </div>

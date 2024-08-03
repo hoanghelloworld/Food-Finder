@@ -2,7 +2,7 @@ import { UserLocationContext } from '@/context/UserLocationContext';
 import Image from 'next/image';
 import { calculateDistance } from '@/utils/calculateDist';
 import React, { useContext, useEffect, useState } from 'react';
-
+    
 function BusinessItem({ business, showDir = false }) {
     const { userLocation, setUserLocation } = useContext(UserLocationContext);
     const [distance, setDistance] = useState();
