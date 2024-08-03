@@ -1,7 +1,6 @@
 "use client"
 import { useContext, useEffect, useState } from 'react';
 import { calculateDistance } from '@/utils/calculateDist';
-import BusinessList from '@/components/Home/BusinessList';
 import OSMMapView from '@/components/Home/OSMMapView';
 import SkeltonLoading from '@/components/SkeltonLoading';
 import { UserLocationContext } from '@/context/UserLocationContext';
@@ -9,6 +8,9 @@ import { signOut, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import RangeSelect from '@/components/Home/RangeSelect';
 import SelectRating from '@/components/Home/SelectRating';
+import CategoryList from '@/components/Home/CategoryList'; // TODO: Import the CategoryList component
+import BusinessList from '@/components/Home/BusinessList';
+import HeaderNavBar from '@/components/HeaderNavBar';
 
 export default function Home() {
   const { data: session } = useSession();
@@ -19,7 +21,7 @@ export default function Home() {
   const router = useRouter();
   const { userLocation, setUserLocation } = useContext(UserLocationContext);
   const [minRating, setMinRating] = useState(0);
-
+  const [selectedLabel, setSelectedLabel] = useState('');
 
 
   // Push Login....
@@ -38,7 +40,7 @@ export default function Home() {
         const roundedLatitude = Math.round(latitude * 10000000) / 10000000;
         const roundedLongitude = Math.round(longitude * 10000000) / 10000000;
         console.log(`Vị trí hiện tại:${roundedLatitude}, ${roundedLongitude}`);
-        setUserLocation({ lat: roundedLatitude, lng: roundedLongitude });
+        setUserLocation({ lat: 21.0381127, lng: 105.7827074 });
       },
       (error) => {
         console.error("Error getting current location", error);
@@ -82,28 +84,36 @@ export default function Home() {
     }
   };
   // ________________________________
-
+  const handleSearchResult = (label) => {
+    setSelectedLabel(label);
+    setCategory(label); // Thay đổi category dựa trên kết quả tìm kiếm
+  };
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-4 '>
-      <div className='p-3'>
-        <SelectRating onRatingChange={(value) => setMinRating(value)} />
-        <RangeSelect onRadiusChange={(value) => setRadius(value)} />
-      </div>
-      {/* BẢN ĐỒ */}
-      <div className='col-span-3'>
-        <OSMMapView businessList={businessList} />
-        <div className='md:absolute mx-2 w-[90%] md:w-[74%] bottom-36 relative md:bottom-3'>
-          {!loading ? <BusinessList businessList={businessList} />
-            :
-            <div className='flex gap-3'>
-              {[1, 2, 3, 4, 5].map((item, index) => (
-                <SkeltonLoading key={index} />
-              ))}
-            </div>
-          }
+  <div>
+  <HeaderNavBar onSearchResult={handleSearchResult} />
+    <div className='grid grid-cols-1 md:grid-cols-11 h-screen'>
+      <div className='p-3 col-span-1 md:col-span-1 w-full bg-gray-100'>
+        <div className='flex flex-col space-y-4 mt-5'>
+          <SelectRating onRatingChange={(value) => setMinRating(value)} />
+          <RangeSelect onRadiusChange={(value) => setRadius(value)} />
         </div>
       </div>
+      <div className='col-span-1 md:col-span-4 overflow-y-scroll h-full'>
+        {!loading ? <BusinessList
+        businessList={businessList}
+        /> : (
+          <div className='flex flex-col gap-3'>
+            {[1, 2, 3, 4, 5].map((item, index) => (
+              <SkeltonLoading key={index} />
+            ))}
+          </div>
+        )}
+      </div>
+      <div className='col-span-1 md:col-span-6'>
+        <OSMMapView businessList={businessList} />
+      </div>
     </div>
+  </div>
   );
 }

@@ -1,4 +1,4 @@
-// File: C:\Users\huyho\OneDrive\Máy tính\restaurant-finder-nextjs\Food-Finder\Front-end\app\page.js
+// File: C:\Users\FPT\Code Python\FoodFinderWeb\restaurant-finder-nextjs\app\page.js
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
