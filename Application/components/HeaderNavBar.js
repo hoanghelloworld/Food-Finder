@@ -16,7 +16,7 @@ const HeaderNavBar = ({ onSearchResult }) => {
   const { userLocation } = useContext(UserLocationContext);
 
   const [imageSrc, setImageSrc] = useState(null);
-  const [fileLink, setFileLink] = useState(null); // Thêm state để lưu fileLink
+  const [fileLink, setFileLink] = useState(null);
   const [label, setLabel] = useState(null);
   const [confidence, setConfidence] = useState(null);
 
@@ -55,7 +55,6 @@ const HeaderNavBar = ({ onSearchResult }) => {
         console.log(`KDL base64: ${typeof imageDataUrl}`);
         setImageSrc(imageDataUrl);
         const blob = dataURLtoBlob(imageDataUrl);
-        // Upload the image
         await uploadImage(blob);
       };
       reader.readAsDataURL(file);
@@ -81,7 +80,7 @@ const HeaderNavBar = ({ onSearchResult }) => {
     myHeaders.append("accept", "application/json");
 
     const formdata = new FormData();
-    formdata.append("file", blob, "upload-image.png"); // Use a filename here, like "image.png"
+    formdata.append("file", blob, "upload-image.png");
 
     const requestOptions = {
       method: "POST",
@@ -95,16 +94,15 @@ const HeaderNavBar = ({ onSearchResult }) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      return response.text(); // Get the response as text
+      return response.text();
     })
     .then((result) => {
       try {
-        const jsonResult = JSON.parse(JSON.parse(result)); // Parse the result as JSON
-        console.log(jsonResult); // Log the entire JSON object
+        const jsonResult = JSON.parse(JSON.parse(result));
+        console.log(jsonResult);
         if (jsonResult && jsonResult.data && jsonResult.data.link) {
-          console.log(jsonResult.data.link); // Access and log the `data.link` property
+          console.log(jsonResult.data.link);
           setFileLink(jsonResult.data.link);
-          // Call getModelPrediction here if needed
           getModelPrediction(jsonResult.data.link);
         } else {
           console.log('Link not found in result');
@@ -124,7 +122,7 @@ const HeaderNavBar = ({ onSearchResult }) => {
     console.log(typeof(fileLink));
 
     const formdata = new FormData();
-    formdata.append("image_url", fileLink); // Use a filename here, like "image.png"
+    formdata.append("image_url", fileLink);
 
     const requestOptions = {
       method: "POST",
@@ -138,11 +136,10 @@ const HeaderNavBar = ({ onSearchResult }) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      return response.text(); // Get the response as text
+      return response.text();
     })
     .then((result) => {
       console.log(result);
-      // Assuming the result is JSON formatted
       try {
         const jsonResult = JSON.parse(result);
         setLabel(jsonResult.class);
@@ -154,9 +151,6 @@ const HeaderNavBar = ({ onSearchResult }) => {
     .catch((error) => console.error('Fetch error:', error));
   };
 
-
-  
-  // XỬ LÝ ẢNH UPLOAD_______________________________
   useEffect(() => {
     if (fileLink) {
       getModelPrediction(fileLink)
@@ -169,11 +163,9 @@ const HeaderNavBar = ({ onSearchResult }) => {
         <Image src="/logo.png" alt="logo" width={50} height={50} />
         <h2 className="cursor-pointer hover:text-blue-500">Food Finder</h2>
       </div>
-      <div className = "flex w-full">
+      <div className="flex w-full">
         <SearchBar onSearchResult={onSearchResult} />
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 12" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 cursor-pointer ml-3" onClick={handleCameraClick}>
-          <MdPhotoCamera />
-        </svg>
+        <MdPhotoCamera className="w-10 h-10 cursor-pointer ml-3" onClick={handleCameraClick} />
       </div>
       <CameraModal
         cameraOpen={cameraOpen}
@@ -193,10 +185,10 @@ const HeaderNavBar = ({ onSearchResult }) => {
               width={40}
               height={40}
               onClick={() => setProfileClick(!profileClick)}
-              className="rounded-full cursor-pointer hover:border-[2px] border-blue-500"
+              className="rounded-full cursor-pointer hover:border-2 border-blue-500"
             />
             {profileClick ? (
-              <div className="absolute bg-white p-3 shadow-md border-[1px] mt-2 z-30 right-4">
+              <div className="absolute bg-white p-3 shadow-md border mt-2 z-30 right-4">
                 <h2 className="cursor-pointer hover:text-blue-500 hover:font-bold" onClick={() => signOut()}>
                   Logout
                 </h2>
@@ -210,4 +202,3 @@ const HeaderNavBar = ({ onSearchResult }) => {
 };
 
 export default HeaderNavBar;
-
