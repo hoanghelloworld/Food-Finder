@@ -4,8 +4,6 @@
   <h1>Food Finder</h1>
   
   <p>
-    A comprehensive learning management system developed using HTML-CSS. It includes features such as course management (add and drop), grade and assessment result management, online quizzes, report generation, student and instructor management, dashboard functionalities, and many other features.
-    Interactive Dashboard 🤩 Attendance Management 🏫 Provide Feedback ✍ Result Generation 📜 Review CV 📜 Leave Application 🍂!
   </p>
   
 <!-- Badges -->
