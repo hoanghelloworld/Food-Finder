@@ -11,10 +11,12 @@ import SelectRating from '@/components/Home/SelectRating';
 import CategoryList from '@/components/Home/CategoryList'; // TODO: Import the CategoryList component
 import BusinessList from '@/components/Home/BusinessList';
 import HeaderNavBar from '@/components/HeaderNavBar';
+import { useLabel } from '@/context/LabelContext';
 
 export default function Home() {
   const { data: session } = useSession();
   const [radius, setRadius] = useState(10000); // Bán kính tìm kiếm
+  const { label, setLabel } = useLabel();
   const [category, setCategory] = useState('Goi cuon');
   const [businessList, setBusinessList] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -30,6 +32,12 @@ export default function Home() {
       router.push('/Login');
     }
   }, [session]);
+
+  useEffect(() => {
+    if (label) {
+      setCategory(label);
+    }
+  }, [label]);
 
 
   // _______ VỊ TRÍ HIỆN TẠI ________

@@ -6,6 +6,7 @@ import { UserLocationContext } from '@/context/UserLocationContext';
 import SearchBar from './Home/SearchBar';
 import CameraModal from './Home/CameraModal';
 import { dataURLtoBlob, uploadImage } from './Home/utils';
+import { useLabel } from "@/context/LabelContext";
 
 const HeaderNavBar = ({ onSearchResult }) => {
   const { data: session } = useSession();
@@ -17,7 +18,7 @@ const HeaderNavBar = ({ onSearchResult }) => {
 
   const [imageSrc, setImageSrc] = useState(null);
   const [fileLink, setFileLink] = useState(null);
-  const [label, setLabel] = useState(null);
+  const { label, setLabel } = useLabel();
   const [confidence, setConfidence] = useState(null);
 
   useEffect(() => {
@@ -59,6 +60,7 @@ const HeaderNavBar = ({ onSearchResult }) => {
       };
       reader.readAsDataURL(file);
     }
+      setCameraOpen(false);
   };
 
   // Base64 thành BLOB
