@@ -19,7 +19,7 @@ const HeaderNavBar = ({ onSearchResult }) => {
 
   const [imageSrc, setImageSrc] = useState(null);
   const [fileLink, setFileLink] = useState(null); // Thêm state để lưu fileLink
-  const {label, setLabel} = useState(null);
+  const {label, setLabel} = useLabel();
   const [confidence, setConfidence] = useState(null);
 
   useEffect(() => {
