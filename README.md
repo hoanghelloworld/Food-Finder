@@ -10,23 +10,23 @@
   
 <!-- Badges -->
 <p>
-  <a href="https://github.com/hoanghelloworld/Student-Management/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/hoanghelloworld/Student-Management" alt="contributors" />
+  <a href="https://github.com/hoanghelloworld/Food-Finder/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/hoanghelloworld/Food-Finder" alt="contributors" />
   </a>
-  <a href="https://img.shields.io/github/last-commit/hoanghelloworld/Student-Management">
-    <img src="https://img.shields.io/github/last-commit/hoanghelloworld/Student-Management" alt="last update" />
+  <a href="https://img.shields.io/github/last-commit/hoanghelloworld/Food-Finder">
+    <img src="https://img.shields.io/github/last-commit/hoanghelloworld/Food-Finder" alt="last update" />
   </a>
-  <a href="https://github.com/hoanghelloworld/Student-Management/network/members">
-    <img src="https://img.shields.io/github/forks/hoanghelloworld/Student-Management" alt="forks" />
+  <a href="https://github.com/hoanghelloworld/Food-Finder/network/members">
+    <img src="https://img.shields.io/github/forks/hoanghelloworld/Food-Finder" alt="forks" />
   </a>
-  <a href="https://github.com/hoanghelloworld/Student-Management/stargazers">
-    <img src="https://img.shields.io/github/stars/hoanghelloworld/Student-Management" alt="stars" />
+  <a href="https://github.com/hoanghelloworld/Food-Finder/stargazers">
+    <img src="https://img.shields.io/github/stars/hoanghelloworld/Food-Finder" alt="stars" />
   </a>
-  <a href="https://github.com/hoanghelloworld/Student-Management/issues/">
-    <img src="https://img.shields.io/github/issues/hoanghelloworld/Student-Management" alt="open issues" />
+  <a href="https://github.com/hoanghelloworld/Food-Finder/issues/">
+    <img src="https://img.shields.io/github/issues/hoanghelloworld/Food-Finder" alt="open issues" />
   </a>
-  <a href="https://github.com/hoanghelloworld/Student-Management/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/hoanghelloworld/Student-Management.svg" alt="license" />
+  <a href="https://github.com/hoanghelloworld/Food-Finder/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/hoanghelloworld/Food-Finder.svg" alt="license" />
   </a>
 </p>
    
@@ -35,9 +35,9 @@
   <span> · </span>
     <a href="https://drive.google.com/file/d/1bPu_aIvzJ_LO1Dn77H8vCEGfSRLKS6Fa/view?usp=drive_link">Documentation</a>
   <span> · </span>
-    <a href="https://github.com/hoanghelloworld/Student-Management/issues/">Report Bug</a>
+    <a href="https://github.com/hoanghelloworld/Food-Finder/issues/">Report Bug</a>
   <span> · </span>
-    <a href="https://github.com/hoanghelloworld/Student-Management/issues/">Request Feature</a>
+    <a href="https://github.com/hoanghelloworld/Food-Finder/issues/">Request Feature</a>
 </h4>
 </div>
 
@@ -188,8 +188,8 @@ Contributions are what make the open-source community such an amazing place to l
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-<a href="https://github.com/hoanghelloworld/Student-Management/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=hoanghelloworld/Student-Management" />
+<a href="https://github.com/hoanghelloworld/Food-Finder/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=hoanghelloworld/Food-Finder" />
 =======
 <a href="https://github.com/hoanghelloworld">
   <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
@@ -209,7 +209,7 @@ See `contributing.md` for ways to get started.
 <!-- Code of Conduct -->
 ### :scroll: Code of Conduct
 
-Please read the [Code of Conduct](https://github.com/hoanghelloworld/Student-Management/blob/master/CODE_OF_CONDUCT.md)
+Please read the [Code of Conduct](https://github.com/hoanghelloworld/Food-Finder/blob/master/CODE_OF_CONDUCT.md)
 
 <!-- FAQ -->
 ## :grey_question: FAQ
@@ -234,7 +234,7 @@ Distributed under the no License. See LICENSE.txt for more information.
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 
-Project Link: [https://github.com/hoanghelloworld/Student-Management](https://github.com/hoanghelloworld/Student-Management)
+Project Link: [https://github.com/hoanghelloworld/Student-Management](https://github.com/hoanghelloworld/Food-Finder)
 
 
 <!-- Acknowledgments -->
