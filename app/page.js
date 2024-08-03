@@ -1,14 +1,15 @@
 "use client"
 import { useContext, useEffect, useState } from 'react';
-// Định nghĩa sau:
-// import BusinessList from '@/components/Home/BusinessList';
-// import OSMMapView from '@/components/Home/OSMMapView';
-// import SkeltonLoading from '@/components/SkeltonLoading';
+import { calculateDistance } from '@/utils/calculateDist';
+import BusinessList from '@/components/Home/BusinessList';
+import OSMMapView from '@/components/Home/OSMMapView';
+import SkeltonLoading from '@/components/SkeltonLoading';
 import { UserLocationContext } from '@/context/UserLocationContext';
 import { signOut, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import RangeSelect from '@/components/Home/RangeSelect';
 import SelectRating from '@/components/Home/SelectRating';
+import CategoryList from '@/components/Home/CategoryList'; // TODO: Import the CategoryList component
 
 export default function Home() {
   const { data: session } = useSession();
@@ -19,6 +20,8 @@ export default function Home() {
   const router = useRouter();
   const { userLocation, setUserLocation } = useContext(UserLocationContext);
   const [minRating, setMinRating] = useState(0);
+
+
 
   // Push Login....
   useEffect(() => {
@@ -85,6 +88,7 @@ export default function Home() {
   return (
     <div className='grid grid-cols-1 md:grid-cols-4 '>
       <div className='p-3'>
+        <CategoryList onCategoryChange={(value) => setCategory(value)} /> 
         <SelectRating onRatingChange={(value) => setMinRating(value)} />
         <RangeSelect onRadiusChange={(value) => setRadius(value)} />
       </div>
