@@ -6,6 +6,7 @@
   <p>
   </p>
 [Demo App](https://foodfinderai-a61adf03833a.herokuapp.com/) - This is demo app.
+
 <!-- Badges -->
 <p>
   <a href="https://github.com/hoanghelloworld/Food-Finder/graphs/contributors">
