@@ -22,7 +22,7 @@ const SearchBar = ({ onSearchResult, handleCameraClick }) => {
 
   const handleSearchKeyDown = (event) => {
     if (event.key === 'Enter') {
-      const result = searchResults[0];
+      const result = searchResults[5];
       if (result) {
         onSearchResult(result.label);
       } else {

@@ -63,12 +63,12 @@ const CameraModal = ({
       <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[9999]">
         <div className="bg-white p-4 rounded-md shadow-md flex flex-col items-center">
           {imageSrc ? (
-            <img src={imageSrc} alt="Captured" className="w-full h-auto" />
+            <img src={imageSrc} alt="Captured" className="w-full h-auto max-h-96 object-contain" />
           ) : (
             <video
               id="camera"
               ref={webcamRef}
-              className="w-full h-auto"
+              className="w-full h-auto max-h-96 object-contain"
             ></video>
           )}
           
@@ -85,21 +85,21 @@ const CameraModal = ({
               onClick={() => fileInputRef.current.click()}
               className="mt-2 bg-yellow-500 text-white p-2 min-w-30 mr-2 rounded-md"
             >
-              <MdCloudUpload />
+              <MdCloudUpload className="w-6 h-6"/>
             </button>
             {!imageSrc && (
               <button
                 onClick={handleCamera}
-                className="mt-2 bg-green-500 text-white p-2 min-w-30 mr-2 rounded-md"
+                className=" bg-green-500 text-white p-2 min-w-30 mr-2 rounded-md"
               >
-                <MdPhotoCamera />
+                <MdPhotoCamera className="w-6 h-6"/>
               </button>
             )}
             <button
               onClick={handleCloseCamera}
               className="mt-2 bg-red-500 text-white p-2 min-w-30 rounded-md"
             >
-              <MdClose />
+              <MdClose className="w-6 h-6"/>
             </button>
           </div>
         </div>
