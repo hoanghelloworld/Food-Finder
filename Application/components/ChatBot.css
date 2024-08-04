@@ -5,7 +5,7 @@
   }
   
   .chat-bot-button {
-    background-color: #0056b3;
+    background-color: #feb256;
     color: white;
     border: none;
     border-radius: 50%;
@@ -16,7 +16,7 @@
   }
   
   .chat-bot-button:hover {
-    background-color: #0056b3;
+    background-color: #feb256;
   }
   
   .chat-bot {
@@ -42,7 +42,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #007bff;
+    background-color: #feb256;
     color: white;
     padding: 10px;
     border-top-left-radius: 10px;
@@ -66,7 +66,7 @@
   }
   
   .message.user {
-    background-color: #007bff;
+    background-color: #feb256;
     color: white;
     align-self: flex-end;
   }
@@ -95,11 +95,11 @@
   }
   
   .chat-input-container input:focus {
-    border-color: #007bff;
+    border-color: #feb256;
   }
   
   .chat-input-container button {
-    background-color: #007bff;
+    background-color: #feb256;
     color: white;
     border: none;
     border-radius: 20px;
@@ -109,7 +109,7 @@
   }
   
   .chat-input-container button:hover {
-    background-color: #0056b3;
+    background-color: #feb256;
   }
   
   .close-button {
@@ -127,7 +127,7 @@
   }
   
   .chat-prompts button {
-    background-color: #007bff;
+    background-color: #feb256;
     color: white;
     border: none;
     border-radius: 5px;
@@ -138,13 +138,13 @@
   }
   
   .chat-prompts button:hover {
-    background-color: #0056b3;
+    background-color: #feb256;
   }
   
   .custom-resize-handle {
     width: 20px;
     height: 20px;
-    background-color: #007bff;
+    background-color: #feb256;
     border-radius: 50%;
     position: absolute;
     top: 0;

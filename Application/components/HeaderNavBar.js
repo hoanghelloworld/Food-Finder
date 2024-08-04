@@ -124,7 +124,7 @@ const HeaderNavBar = ({ onSearchResult }) => {
     const myHeaders = new Headers();
     myHeaders.append("accept", "application/json");
     console.log(fileLink);
-    console.log(typeof(fileLink));
+    console.log("Dang o model");
 
     const formdata = new FormData();
     formdata.append("image_url", fileLink); // Use a filename here, like "image.png"
@@ -181,7 +181,13 @@ const HeaderNavBar = ({ onSearchResult }) => {
         </svg>
       </div>
       <CameraModal
+        loading={loading}
+        uploadImage={uploadImage}
+        label={label}
+        confidence={confidence}
+        dataURLtoBlob={dataURLtoBlob}
         cameraOpen={cameraOpen}
+        setCameraOpen={setCameraOpen}
         handleCloseCamera={handleCloseCamera}
         handleCapture={handleCapture}
         webcamRef={webcamRef}

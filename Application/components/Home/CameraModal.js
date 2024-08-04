@@ -1,33 +1,43 @@
-import React, { useEffect } from 'react';
-import { MdPhotoCamera, MdClose, MdReplay, MdCloudUpload } from 'react-icons/md';
+import React, { useEffect } from "react";
+import {
+  MdPhotoCamera,
+  MdClose,
+  MdReplay,
+  MdCloudUpload,
+} from "react-icons/md";
 
 // Hàm nhận đầu vào để tắt, bật cam, nhập xuất file ảnh
 const CameraModal = ({
   cameraOpen, //Bool
   handleCloseCamera, //Bool
+  setCameraOpen,
+  dataURLtoBlob,
+  uploadImage,
   handleCapture,
   webcamRef,
   fileInputRef,
   imageSrc,
-  setImageSrc
+  setImageSrc,
 }) => {
   useEffect(() => {
     let stream;
     if (cameraOpen) {
       const video = document.getElementById("camera");
       if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true }).then(newStream => {
-          stream = newStream;
-          video.srcObject = stream;
-          video.play();
-        });
+        navigator.mediaDevices
+          .getUserMedia({ video: true })
+          .then((newStream) => {
+            stream = newStream;
+            video.srcObject = stream;
+            video.play();
+          });
       }
     }
 
     return () => {
       if (stream) {
         const tracks = stream.getTracks();
-        tracks.forEach(track => track.stop());
+        tracks.forEach((track) => track.stop());
       }
     };
   }, [cameraOpen]);
@@ -40,6 +50,12 @@ const CameraModal = ({
     canvas.getContext("2d").drawImage(video, 0, 0);
     const imageSrc = canvas.toDataURL("image/png");
     setImageSrc(imageSrc);
+    const blob = dataURLtoBlob(imageSrc);
+    await uploadImage(blob);
+
+    setTimeout(function () {
+      setCameraOpen(false);
+    }, 2000);
   };
 
   return (
@@ -49,19 +65,40 @@ const CameraModal = ({
           {imageSrc ? (
             <img src={imageSrc} alt="Captured" className="w-full h-auto" />
           ) : (
-            <video id="camera" ref={webcamRef} className="w-full h-auto"></video>
+            <video
+              id="camera"
+              ref={webcamRef}
+              className="w-full h-auto"
+            ></video>
           )}
+          
           <div>
-            <input type="file" accept="image/*" capture="camera" onChange={handleCapture} ref={fileInputRef} style={{ display: 'none' }} />
-            <button onClick={() => fileInputRef.current.click()} className="mt-2 bg-yellow-500 text-white p-2 min-w-30 mr-2 rounded-md">
+            <input
+              type="file"
+              accept="image/*"
+              capture="camera"
+              onChange={handleCapture}
+              ref={fileInputRef}
+              style={{ display: "none" }}
+            />
+            <button
+              onClick={() => fileInputRef.current.click()}
+              className="mt-2 bg-yellow-500 text-white p-2 min-w-30 mr-2 rounded-md"
+            >
               <MdCloudUpload />
             </button>
             {!imageSrc && (
-              <button onClick={handleCamera} className="mt-2 bg-green-500 text-white p-2 min-w-30 mr-2 rounded-md">
+              <button
+                onClick={handleCamera}
+                className="mt-2 bg-green-500 text-white p-2 min-w-30 mr-2 rounded-md"
+              >
                 <MdPhotoCamera />
               </button>
             )}
-            <button onClick={handleCloseCamera} className="mt-2 bg-red-500 text-white p-2 min-w-30 rounded-md">
+            <button
+              onClick={handleCloseCamera}
+              className="mt-2 bg-red-500 text-white p-2 min-w-30 rounded-md"
+            >
               <MdClose />
             </button>
           </div>
@@ -72,4 +109,3 @@ const CameraModal = ({
 };
 
 export default CameraModal;
-
