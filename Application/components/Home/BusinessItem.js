@@ -22,6 +22,8 @@ function BusinessItem({ business, showDir = false }) {
 
     // Mở cửa sổ chỉ đường của Google Maps
     const onDirectionClick = () => {
+        console.log("Clicked")
+        console.log(business)
         window.open(business.url);
     };
 
@@ -34,6 +36,7 @@ function BusinessItem({ business, showDir = false }) {
                 // Link ảnh
                 src={imageUrl}
                 // Tên
+                onClick={onDirectionClick}
                 alt={business.title}
                 // Kích thước ảnh - giữ nguyên
                 width={180}

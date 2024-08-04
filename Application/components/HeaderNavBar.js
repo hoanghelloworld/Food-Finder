@@ -16,6 +16,7 @@ const HeaderNavBar = ({ onSearchResult }) => {
   const webcamRef = useRef(null);
   const fileInputRef = useRef(null);
   const { userLocation } = useContext(UserLocationContext);
+  const [loading, setLoading] = useState(false);
 
   const [imageSrc, setImageSrc] = useState(null);
   const [fileLink, setFileLink] = useState(null); // Thêm state để lưu fileLink
@@ -60,7 +61,8 @@ const HeaderNavBar = ({ onSearchResult }) => {
       };
       reader.readAsDataURL(file);
     }
-    setCameraOpen(false);
+    
+    setTimeout(function() {setCameraOpen(false)},2000);
   };
 
   // Base64 thành BLOB
@@ -133,6 +135,7 @@ const HeaderNavBar = ({ onSearchResult }) => {
       body: formdata,
       redirect: "follow"
     };
+    setLoading(true);
 
     fetch("http://127.0.0.1:8000/classify/url", requestOptions)
     .then((response) => {
@@ -152,7 +155,8 @@ const HeaderNavBar = ({ onSearchResult }) => {
         console.error('Error parsing JSON:', error);
       }
     })
-    .catch((error) => console.error('Fetch error:', error));
+    .catch((error) => console.error('Fetch error:', error))
+    .finally(() => setLoading(false));
   };
 
 
@@ -185,6 +189,11 @@ const HeaderNavBar = ({ onSearchResult }) => {
         imageSrc={imageSrc}
         setImageSrc={setImageSrc}
       />
+      {loading && (
+        <div className="flex items-center justify-center">
+          <div className="loader"></div> {/* Add your loading spinner here */}
+        </div>
+      )}
       {<PredictResult label={label} confidence={confidence} />}
       <div>
         {session?.user ? (
