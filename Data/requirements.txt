@@ -1,7 +1,0 @@
-os
-PIL
-imagehash
-undetected-chromedriver
-selenium
-tqdm
-requests

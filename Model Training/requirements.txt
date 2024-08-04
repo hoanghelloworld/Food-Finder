@@ -1,5 +1,0 @@
-tensorflow
-matplotlib
-h5py
-scikit-learn
-numpy
