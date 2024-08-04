@@ -23,7 +23,7 @@
   <a href="https://github.com/hoanghelloworld/Food-Finder/issues/">
     <img src="https://img.shields.io/github/issues/hoanghelloworld/Food-Finder" alt="open issues" />
   </a>
-  <a href="https://github.com/hoanghelloworld/Food-Finder/blob/master/LICENSE">
+  <a href="https://github.com/hoanghelloworld/Food-Finder/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/hoanghelloworld/Food-Finder.svg" alt="license" />
   </a>
 </p>
@@ -102,7 +102,7 @@ To get a local copy up and running, follow these simple steps:
     ```
 4. Start the server:
     ```bash
-    npm start
+    npm run dev
     ```
 
 ## Usage
