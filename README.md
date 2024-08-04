@@ -5,7 +5,8 @@
   
   <p>
   </p>
-[Demo App](https://foodfinderai-a61adf03833a.herokuapp.com/) - This is demo app.
+Demo App : https://foodfinderai-a61adf03833a.herokuapp.com/
+This is demo app.
 
 <!-- Badges -->
 <p>
