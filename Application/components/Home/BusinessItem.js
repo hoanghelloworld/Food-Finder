@@ -55,7 +55,7 @@ function BusinessItem({ business, showDir = false }) {
             </div>
             {showDir ? (
                 <div className='border-t-[1px] p-1 mt-1'>
-                    <h2 className='text-[#0075ff] flex justify-between items-center'>Dist: {dist} km
+                    <h2 className='text-[#0075ff] flex justify-between items-center'>Dist: {distance} km
                         <span className='border-[1px] p-1 rounded-full border-blue-500 hover:text-white hover:bg-blue-500' onClick={onDirectionClick}>Get Direction</span>
                     </h2>
                 </div>

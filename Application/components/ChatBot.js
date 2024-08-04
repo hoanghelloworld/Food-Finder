@@ -137,8 +137,7 @@ const ChatBot = () => {
             <div className="chat-prompts">
               <button onClick={() => handlePromptClick('Đưa ra những món ăn giàu protein')}>Món ăn giàu protein</button>
               <button onClick={() => handlePromptClick('Xây dựng thực đơn 7 ngày')}>Thực đơn 7 ngày</button>
-              <button onClick={() => handlePromptClick('Tìm quán ăn 5 sao gần nhất')}>Tìm quán ăn 5 sao</button>
-              <button onClick={() => handlePromptClick('Tìm quán ăn gần nhất')}>Tìm quán ăn gần nhất</button>
+              <button onClick={() => handlePromptClick('Thực đơn giành cho người giảm cân')}>Thực đơn giành cho người giảm cân</button>
             </div>
           </div>
         </ResizableBox>

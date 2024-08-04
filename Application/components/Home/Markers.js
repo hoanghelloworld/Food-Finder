@@ -4,10 +4,13 @@ import BusinessItem from './BusinessItem';
 import { SelectedBusinessContext } from '@/context/SelectedBusinessContext';
 import L from 'leaflet';
 
-function Markers({ business }) {
+const Markers = ({ business }) => {
   const { selectedBusiness, setSelectedBusiness } = useContext(SelectedBusinessContext);
 
-  const businessIcon = new L.Icon({});
+  const businessIcon = new L.Icon({
+    iconUrl: '/gps.png',
+    iconSize: [30, 30],
+  });
 
   return (
     <Marker
@@ -22,12 +25,12 @@ function Markers({ business }) {
       {selectedBusiness && selectedBusiness.placeId === business.placeId && (
         <Popup>
           <div className='popup-content'>
-            <BusinessItem business={business} showDir={true} />
+            <BusinessItem business={selectedBusiness} showDir={true} />
           </div>
         </Popup>
       )}
     </Marker>
   );
-}
+};
 
 export default Markers;

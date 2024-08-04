@@ -1,13 +1,15 @@
-import React, { useEffect, useRef, useState, useContext } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import { UserLocationContext } from '@/context/UserLocationContext';
+import { SelectedBusinessContext } from '@/context/SelectedBusinessContext';
 import 'leaflet/dist/leaflet.css';
+import Markers from './Markers';
 
 const OSMMapView = ({ businessList }) => {
   const { userLocation } = useContext(UserLocationContext);
+  const { selectedBusiness, setSelectedBusiness } = useContext(SelectedBusinessContext);
   const mapRef = useRef();
-  const [selectedBusiness, setSelectedBusiness] = useState(null);
 
   useEffect(() => {
     if (mapRef.current && userLocation && userLocation.lat && userLocation.lng) {
@@ -17,25 +19,8 @@ const OSMMapView = ({ businessList }) => {
 
   const userIcon = new L.Icon({
     iconUrl: '/user.png',
-    iconSize: [40, 50], // size of icon
+    iconSize: [60, 65],
   });
-5050
-  const businessIcon = new L.Icon({
-    iconUrl: '/gps.png',
-    iconSize: [30, 30], // size of icon
-  });
-
-  const handleBusinessClick = (business) => {
-    setSelectedBusiness(business);
-
-    if (userLocation && userLocation.lat && userLocation.lng) {
-      const origin = `${userLocation.lat},${userLocation.lng}`;
-      const destination = `${business.lat},${business.lng}`;
-      const googleMapsURL = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${destination}&travelmode=driving`;
-
-      window.open(googleMapsURL, '_blank');
-    }
-  };
 
   return (
     <MapContainer
@@ -54,16 +39,7 @@ const OSMMapView = ({ businessList }) => {
         </Marker>
       )}
       {businessList.map((business, index) => (
-        <Marker
-          key={index}
-          position={[business.lat, business.lng]}
-          icon={businessIcon}
-          eventHandlers={{
-            click: () => handleBusinessClick(business),
-          }}
-        >
-          <Popup>{business.title}</Popup>
-        </Marker>
+        <Markers key={index} business={business} />
       ))}
     </MapContainer>
   );
