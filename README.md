@@ -6,6 +6,7 @@
   <p>
   </p>
 Demo App : https://foodfinderai-a61adf03833a.herokuapp.com/
+<p>
 This is demo app.
 
 <!-- Badges -->
