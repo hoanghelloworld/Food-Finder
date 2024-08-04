@@ -6,7 +6,7 @@ import { Raleway } from 'next/font/google'
 import { useEffect, useState } from 'react'
 import { UserLocationContext } from '@/context/UserLocationContext'
 import { SelectedBusinessContext } from '@/context/SelectedBusinessContext'
-
+import ChatBot from '@/components/ChatBot'
 
 const raleway = Raleway({ subsets: ['latin'] })
 
@@ -41,6 +41,7 @@ export default function RootLayout({ children }) {
             <UserLocationContext.Provider value={{ userLocation, setUserLocation }}>
               {/* <HeaderNavBar /> */}
               {children}
+              <ChatBot />
             </UserLocationContext.Provider>
           </SelectedBusinessContext.Provider>
         </Provider>
