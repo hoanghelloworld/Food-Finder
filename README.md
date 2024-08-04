@@ -68,6 +68,87 @@
 <!-- About the Project -->
 ## :star2: About the Project
 
+### Purpose
+Explore and discover more information about Vietnamese cuisine and dishes. FoodFinder is an application that uses AI technology to identify dishes from user-provided images or input. It helps users save time and effort in searching for information about dishes and dining places, while also reducing the effort needed to compare restaurants.
+
+### Benefits
+- **Food Identification**: Identify dishes from images using AI, helping users quickly and accurately determine what the dish is.
+- **Information Provision**: Provide detailed information about dishes, including ingredients, preparation methods, and dish characteristics, so users can better understand the dishes they are interested in.
+- **Restaurant Finder**: Suggest nearby restaurants or eateries where users can enjoy their favorite dishes or try new ones.
+- **Reviews and Ratings**: Allow users to read and write reviews about dishes and restaurants, improving decision-making.
+
+### Overview Design
+FoodFinder is an intelligent mobile application that helps users explore and learn about Vietnamese cuisine. The application uses AI technology to identify dishes from user-provided images or input. FoodFinder analyzes the images to determine the dish and provides detailed information about ingredients, preparation methods, and dish characteristics. Additionally, the application suggests nearby restaurants or eateries where users can enjoy their favorite dishes or try new ones.
+
+### AI Integration
+1. **Image Recognition**: 
+   - The product uses deep learning models to analyze and identify dishes from user-provided images. This process includes extracting image features, comparing with a food database, and accurately identifying the dish.
+2. **Natural Language Processing (NLP)**: 
+   - The product applies NLP to understand and respond to user queries or requests related to dish information, ingredients, preparation methods, and restaurant reviews. This helps provide information in a natural and intuitive manner.
+3. **Smart Recommendations**: 
+   - AI analyzes user habits and preferences to suggest new dishes or suitable restaurants. The system learns from user data to improve accuracy and personalize recommendations over time.
+
+### Implementation Plan
+1. **Data Collection**
+   - **Data Sources**: Use the "30VNFoods" dataset from Kaggle and additional data from reputable food platforms for Vietnamese cuisine.
+   - **Data Processing**: Clean and process the data to ensure each entry has appropriate labels.
+2. **AI Model Development**
+   - **Image Recognition**:
+     - Use deep learning models like Convolutional Neural Networks (CNN) to analyze and identify dishes from images.
+     - Frameworks: TensorFlow, Keras, PyTorch.
+   - **Natural Language Processing**:
+     - Use NLP models to understand and respond to user questions about dishes.
+     - Frameworks: NLTK, spaCy, BERT.
+3. **Model Building**
+   - **Data Preparation**:
+     - Preprocess image data, including cropping, rotating, and normalizing.
+     - Split data into training, testing, and validation sets.
+   - **Model Training**:
+     - Use TensorFlow or PyTorch to build CNN models.
+     - Train the model on prepared data and optimize hyperparameters for best performance.
+   - **Model Evaluation**:
+     - Use metrics like accuracy, precision, recall, and F1-score to measure model performance.
+     - Adjust and improve the model based on evaluation results.
+4. **Google Map API Integration**
+   - **User Location Identification**:
+     - Use Google Map API to get the user's current location.
+   - **Place Search**:
+     - Use Google Places API to find nearby restaurants or eateries offering the identified dish.
+5. **Web Interface Development**
+   - **User Interface**:
+     - Design UI/UX for the website to allow users to upload dish images, view information, and receive location suggestions.
+     - Use HTML, CSS, and JavaScript for development.
+   - **Front-end Frameworks**:
+     - Use React.js to develop a dynamic and interactive user interface.
+   - **API Integration**:
+     - Integrate developed APIs into the website to provide dish identification and location search features.
+6. **Testing**
+   - Perform unit testing, integration testing, and system testing to ensure website quality.
+7. **Maintenance and Improvement**
+   - Continuously update and improve AI models based on user feedback and new data.
+   - Develop new features, such as restaurant reviews and personalized dish recommendations based on user history.
+
+### Plus Points
+- **Advanced AI Technology**: Continuous improvement in accuracy.
+- **Compact and User-Friendly Design**: Easy to use.
+- **Multilingual Support**: Customizable alerts in the user's language.
+- **Mobile Device Integration**: Compatible with existing mobile devices without special requirements.
+
+### Unique Features
+- **AI Image Recognition**: Quickly and accurately identify dishes from images using deep learning models.
+- **Detailed Information Provision**: Provide information on ingredients, preparation methods, and dish characteristics.
+- **Restaurant Suggestions**: Suggest nearby restaurants using Google Places API.
+- **Reviews and Ratings**: Allow users to read and write reviews about dishes and restaurants.
+
+### Innovations
+- **Combining AI and NLP**: Apply AI and NLP to respond to dish-related queries.
+- **Smart Recommendations**: Analyze user habits and preferences to offer personalized suggestions.
+
+### Superior Advantages
+- **Focus on Vietnamese Cuisine**: Specialized in exploring and promoting Vietnamese cuisine.
+- **Comprehensive Ecosystem**: Provide a complete solution from dish identification to restaurant suggestions and reviews.
+- **Continuous Improvement**: Regular updates and improvements based on user feedback.
+
 <!-- Screenshots -->
 ### :camera: Screenshots
 
@@ -75,135 +156,92 @@
 ### :space_invader: Tech Stack
 
 - **Client**: HTML, CSS, JavaScript
-- **Server**: Node.js, Express.js
+- **Server**: Node.js,
+
+ Express.js
 - **Database**: MongoDB
 
 ## Installation
 
-To get a local copy up and running, follow these simple steps:
-
+<!-- Prerequisites -->
 ### Prerequisites
 
-- Node.js and npm installed on your machine.
-
+<!-- Steps -->
 ### Steps
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/hoanghelloworld/Food-Finder.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd Food-Finder
-    ```
-3. Install the dependencies:
-    ```bash
-    npm install
-    ```
-4. Start the server:
-    ```bash
-    npm run dev
-    ```
-
 ## Usage
-
-To use the application, open your browser and navigate to `http://localhost:3000`. You will be able to add, update, delete, and search for student profiles.
 
 <!-- Features -->
 ### :dart: Features
 
+- Image recognition and dish identification
+- Information provision on dishes
+- Nearby restaurant suggestions
+- User reviews and ratings
+
+<!-- Necessity of the Topic -->
 ### :collision: The Necessity of the Topic
 
+Vietnamese cuisine is rich and diverse, with unique and delicious dishes that captivate tourists and food enthusiasts. However, not everyone is knowledgeable about Vietnamese dishes. Therefore, FoodFinder is created to help users better understand and explore Vietnamese cuisine through AI technology.
 
+<!-- Research Objectives -->
 ### :point_right: Research Objectives
 
+- **Image Recognition**: Identify dishes from user-provided images.
+- **Information Provision**: Provide information on ingredients, preparation methods, and dish characteristics.
+- **Restaurant Suggestions**: Suggest nearby restaurants offering the identified dish.
 
 <!-- Color Reference -->
 ### :art: Color Reference
 
-| Color          | Hex                                                                |
-| -------------- | ------------------------------------------------------------------ |
-| Primary Color  | ![#0D6EFD](https://via.placeholder.com/10/0D6EFD?text=+) #0D6EFD   |
-| Secondary Color| ![#6C757D](https://via.placeholder.com/10/6C757D?text=+) #6C757D   |
-| Success Color  | ![#198754](https://via.placeholder.com/10/198754?text=+) #198754   |
-| Danger Color   | ![#DC3545](https://via.placeholder.com/10/DC3545?text=+) #DC3545   |
-| Warning Color  | ![#FFC107](https://via.placeholder.com/10/FFC107?text=+) #FFC107   |
-| Info Color     | ![#0DCAF0](https://via.placeholder.com/10/0DCAF0?text=+) #0DCAF0   |
+| Color             | Hex       |
+| ----------------- | --------- |
+| Primary Color     | #3498db   |
+| Secondary Color   | #2ecc71   |
+| Accent Color      | #f1c40f   |
+| Text Color        | #333333   |
+| Background Color  | #ffffff   |
 
-
-<!-- Roadmap -->
 ## :compass: Roadmap
 
-* [x] Todo 1
-* [ ] Todo 2
+- [x] AI model for image recognition
+- [x] Integration with Google Map API
+- [x] Development of web interface
+- [x] User reviews and ratings
 
-
-<!-- Contributing -->
 ## :wave: Contributing
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-<a href="https://github.com/hoanghelloworld/Food-Finder/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=hoanghelloworld/Food-Finder" />
-=======
-<a href="https://github.com/hoanghelloworld">
-  <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
-</a>
-<a href="https://github.com/trinhdz-dz">
-  <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
-</a>
-<a href="https://github.com/quankaka11">
-  <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
-</a>
-
-Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
-
+Contributions are always welcome! Please follow the `code of conduct` below.
 
 <!-- Code of Conduct -->
 ### :scroll: Code of Conduct
 
-Please read the [Code of Conduct](https://github.com/hoanghelloworld/Food-Finder/blob/master/CODE_OF_CONDUCT.md)
+- Be respectful.
+- Provide constructive feedback.
+- Follow coding standards.
 
-<!-- FAQ -->
 ## :grey_question: FAQ
 
-- Question 1
+- **How to use FoodFinder?**
+  - Upload an image of the dish, and FoodFinder will identify it and provide detailed information.
+- **How does FoodFinder suggest restaurants?**
+  - FoodFinder uses Google Places API to find nearby restaurants offering the identified dish.
+- **Can users write reviews?**
+  - Yes, users can read and write reviews about dishes and restaurants.
 
-  + Answer 1
-
-- Question 2
-
-  + Answer 2
-
-
-<!-- License -->
 ## :warning: License
 
-Distributed under the no License. See LICENSE.txt for more information.
+Distributed under the MIT License. See LICENSE for more information.
 
-
-<!-- Contact -->
 ## :handshake: Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [@your_twitter](https://twitter.com/your_twitter) - your_email@example.com
 
-Project Link: [https://github.com/hoanghelloworld/Student-Management](https://github.com/hoanghelloworld/Food-Finder)
+Project Link: [https://github.com/hoanghelloworld/Food-Finder](https://github.com/hoanghelloworld/Food-Finder)
 
-
-<!-- Acknowledgments -->
 ## :gem: Acknowledgements
 
-Use this section to mention useful resources and libraries that you have used in your projects.
-
- - [Shields.io](https://shields.io/)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
- - [Readme Template](https://github.com/othneildrew/Best-README-Template)
-
+- Kaggle for the "30VNFoods" dataset
+- Google for Google Maps and Places API
+- TensorFlow, Keras, PyTorch for AI model development
+```
