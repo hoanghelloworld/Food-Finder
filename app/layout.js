@@ -21,6 +21,7 @@ export default function RootLayout({ children }) {
   const [selectedBusiness, setSelectedBusiness] = useState([]);
 
   useEffect(() => {
+    console.log('window.innerHeight', window.innerHeight);
     getUserLocation();
   }, [])
   const getUserLocation = () => {
