@@ -125,7 +125,7 @@ const HeaderNavBar = ({ onSearchResult }) => {
     myHeaders.append("accept", "application/json");
     console.log(fileLink);
     console.log("Dang o model");
-
+    console.log(typeof(fileLink));
     const formdata = new FormData();
     formdata.append("image_url", fileLink); // Use a filename here, like "image.png"
 
@@ -160,13 +160,6 @@ const HeaderNavBar = ({ onSearchResult }) => {
   };
 
 
-  
-  // XỬ LÝ ẢNH UPLOAD_______________________________
-  useEffect(() => {
-    if (fileLink) {
-      getModelPrediction(fileLink)
-    }
-  }, [fileLink])
 
   return session?.user && (
     <div className="flex items-center justify-between p-2 shadow-md">
